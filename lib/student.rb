@@ -28,12 +28,12 @@ class Student
   end
 
   def self.create(name, grade)
-   student = Student.new(name, grade)
+   student = self.new(name, grade)
    student.save
    student
   end
 
- def self.new_from_db(row)
+ def self.new_from_db(row) #how does it know what id, name, grade are? is it because @id = id?
   id = row[0]
   name =  row[1]
   grade = row[2]
